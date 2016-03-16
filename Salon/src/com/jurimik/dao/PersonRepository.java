@@ -27,7 +27,7 @@ public class PersonRepository {
 		return personList;
 	}
 	
-	public boolean delete(int id) {
+	public static boolean delete(int id) {
 		for (Person person : personList) {
 			if (id == person.getId()) {
 				personList.remove(person);
