@@ -12,7 +12,7 @@
 			<table class="add-person">
 				<tr>
 					<td>Addition</td>
-					<td><input type="text" name="type" value="client" disabled></td>
+					<td><input type="text" name="type" value="CLIENT" readonly></td>
 				</tr>
 				<tr>
 					<td>First name:</td>
@@ -24,16 +24,14 @@
 				</tr>
 				<tr>
 					<td>Phone:</td>
-					<td><input type="text" name="phone" required></td>
+					<td><input type="text" name="phone"></td>
 				</tr>
-				<tr>
-					<td>Is client have a card?</td>
-					<td><input type="checkbox" name="is-have-card"></td>
 				<tr>
 					<td>Client card:</td>
-					<td><input type="text" name="card">
+					<td><input type="text" name="card"></td><td>In case client have no card, leave this field is blank.</td>
 				</tr>
 			</table>
+			<input type="submit" value="OK">
 		</form>
 	</body>
 	
