@@ -41,9 +41,8 @@ public class PersonBuilder {
 	}
 	
 	public Person build() {
-		Person person;
 		if (role == Role.CLIENT)
-			person = new ClientCreator().factoryMethod(this);
+			return new ClientCreator().factoryMethod(this);
 		else if (role == Role.EMPLOYEE) {
 			return new EmployeeCreator().factoryMethod(this);
 		}
