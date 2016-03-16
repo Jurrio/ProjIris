@@ -7,10 +7,9 @@ public abstract class Person {
     private String lastName;
     private String phone;
     
-    public Person(String firstName, String lastName, String phone) {
+    public Person(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.phone = phone;
 	}
 
 	public int getId() {

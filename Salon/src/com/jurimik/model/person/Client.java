@@ -4,9 +4,8 @@ public class Client extends Person {
 
 	private String cartNumber;
 	
-	public Client(String firstName, String lastName, String phone, String cardNumber) {
-		super(firstName, lastName, phone);
-		this.cartNumber = cardNumber;
+	public Client(String firstName, String lastName) {
+		super(firstName, lastName);
 	}
 
 	public String getCartNumber() {
