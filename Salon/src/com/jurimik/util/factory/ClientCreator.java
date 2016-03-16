@@ -8,7 +8,7 @@ public class ClientCreator extends PersonFactory {
 
 	@Override
 	public Person factoryMethod(PersonBuilder builder) {
-		Client client = new Client(builder.getFirstName(), builder.getLastName());
+		Client client = new Client(builder);
 		client.setPhone(builder.getPhone());
 		client.setCartNumber(builder.getCard());
 		return client;

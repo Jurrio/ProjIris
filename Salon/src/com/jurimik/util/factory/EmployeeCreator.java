@@ -8,7 +8,7 @@ public class EmployeeCreator extends PersonFactory {
 
 	@Override
 	public Person factoryMethod(PersonBuilder builder) {
-		Employee employee = new Employee(builder.getFirstName(), builder.getLastName());
+		Employee employee = new Employee(builder);
 		employee.setPhone(builder.getPhone());
 //		employee.setPosition(builder.getPosition());
 		return employee;
