@@ -21,8 +21,7 @@ public class Client extends Person {
 
 	@Override
 	public String toString() {
-		return "Client " + getFirstName() + " " + getLastName() + ". Phone: " + getPhone() + 
-				(cartNumber != null ? ", card number: " + cartNumber : "");
+		return "Client " + super.toString() + (cartNumber != null ? ", card number: " + cartNumber : "");
 	}
 	
 }
