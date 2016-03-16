@@ -17,11 +17,13 @@ public class PersonBuilder {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	public void phone(String phone) {
+	public PersonBuilder phone(String phone) {
 		this.phone = phone;
+		return this;
 	}
-	public void card(String card) {
+	public PersonBuilder card(String card) {
 		this.card = card;
+		return this;
 	}
 	
 	public Role getRole() {
