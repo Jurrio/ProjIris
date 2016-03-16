@@ -10,8 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jurimik.constant.RequestParams;
+import com.jurimik.model.person.Client;
+import com.jurimik.model.person.Employee;
 import com.jurimik.model.person.Person;
 import com.jurimik.service.PersonService;
+import com.jurimik.util.Parser;
+
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 @WebServlet(name = "ListPersonServlet", urlPatterns = "/listPerson")
 public class ListPersonServlet extends HttpServlet {
@@ -21,9 +27,17 @@ public class ListPersonServlet extends HttpServlet {
 		PrintWriter writer = resp.getWriter();
 		
 		try {
-			 for (Person person : PersonService.getAll()) {
-				 writer.println(person.toString());
-			 }
+			boolean showClients = Parser.parseBoolean(RequestParams.CLIENTS);
+			boolean showEmployees = Parser.parseBoolean(RequestParams.EMPLOYEES);
+			
+			for (Person person : PersonService.getAll()) {
+				if (person instanceof Client && showClients) 
+					writer.println(person.toString());
+				if (person instanceof Employee && showEmployees) {
+					writer.println(person.toString());
+				}
+			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
