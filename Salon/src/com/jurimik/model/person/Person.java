@@ -9,11 +9,6 @@ public abstract class Person {
     private String lastName;
     private String phone;
     
-    public Person(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-    
     public Person(PersonBuilder builder) {
     	this.firstName = builder.getFirstName();
     	this.lastName = builder.getLastName();
