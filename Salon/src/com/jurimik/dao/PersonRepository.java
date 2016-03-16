@@ -16,7 +16,7 @@ public class PersonRepository {
 		return true;
 	}
 	
-	public static Person get(int id) {
+	public static Person getById(int id) {
 		for (Person person : personList) {
 			if (id == person.getId()) return person;
 		}
