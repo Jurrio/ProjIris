@@ -22,5 +22,11 @@ public class Client extends Person {
 	public void setCartNumber(String cartNumber) {
 		this.cartNumber = cartNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "Client " + getFirstName() + " " + getLastName() + ". Phone: " + getPhone() + 
+				(cartNumber != null ? ", card number: " + cartNumber : "");
+	}
 	
 }
