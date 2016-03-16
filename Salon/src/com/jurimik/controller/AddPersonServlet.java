@@ -29,6 +29,7 @@ public class AddPersonServlet extends HttpServlet {
 			String lastName = req.getParameter(RequestParams.LAST_NAME);
 			String phone = req.getParameter(RequestParams.PHONE);
 			String cardNumber = req.getParameter(RequestParams.AVAILABILITY_CARD);
+			String position = req.getParameter(RequestParams.POSITION);
 			Person person = new PersonBuilder(role, firstName, lastName).phone(phone).card(cardNumber).build();
 			if (PersonService.add(person)) 
 				writer.println(ServletMessage.AddSuccess);
