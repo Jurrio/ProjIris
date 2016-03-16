@@ -25,4 +25,10 @@ public class Employee extends Person {
 		this.position = position;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee " + getFirstName() + " " + getLastName() + ". Posonition: " + position +
+				", phone: " + getPhone();
+	}
+
 }
