@@ -11,7 +11,7 @@ public class PersonBuilder {
 	private final String lastName;
 	private String phone;
 	private String card;
-//	private String position;
+	private String position;
 	public PersonBuilder(String role, String firstName, String lastName) {
 		this.role = Role.valueOf(role.toUpperCase());
 		this.firstName = firstName;
@@ -23,6 +23,10 @@ public class PersonBuilder {
 	}
 	public PersonBuilder card(String card) {
 		this.card = card;
+		return this;
+	}
+	public PersonBuilder position(String position) {
+		this.position = position;
 		return this;
 	}
 	
@@ -41,7 +45,10 @@ public class PersonBuilder {
 	public String getCard() {
 		return card;
 	}
-	
+	public String getPosition() {
+		return position;
+	}
+
 	public Person build() {
 		if (role == Role.CLIENT)
 			return new ClientCreator().factoryMethod(this);
@@ -49,6 +56,5 @@ public class PersonBuilder {
 			return new EmployeeCreator().factoryMethod(this);
 		}
 		return null;
-	}
-	
+	}	
 }
