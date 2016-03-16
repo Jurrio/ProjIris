@@ -23,21 +23,20 @@ public class AddPersonServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter writer = resp.getWriter();
 		
-	//	try {
+		try {
 			String role = req.getParameter(RequestParams.TYPE);
 			String firstName = req.getParameter(RequestParams.FIRST_NAME);
 			String lastName = req.getParameter(RequestParams.LAST_NAME);
 			String phone = req.getParameter(RequestParams.PHONE);
-			boolean haveCard = Parser.parseBoolean(RequestParams.IS_HAVE_CARD);
 			String cardNumber = req.getParameter(RequestParams.AVAILABILITY_CARD);
 			Person person = new PersonBuilder(role, firstName, lastName).phone(phone).card(cardNumber).build();
 			if (PersonService.add(person)) 
 				writer.println(ServletMessage.AddSuccess);
 			else
 				writer.println(ServletMessage.AddCrush);
-//		} catch (Exception ex) {
-	//		writer.println(ex.getStackTrace().toString());
-		//}
+		} catch (Exception ex) {
+			writer.println(ex.getStackTrace().toString());
+		}
 		
 	}
 	
