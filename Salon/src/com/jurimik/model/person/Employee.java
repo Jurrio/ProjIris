@@ -12,7 +12,7 @@ public class Employee extends Person {
 
 	public Employee(PersonBuilder builder) {
 		super(builder);
-//		this.position = builder.getPosition();
+		this.position = builder.getPosition();
 	}
 
 
