@@ -1,5 +1,7 @@
 package com.jurimik.model.person;
 
+import com.jurimik.builder.PersonBuilder;
+
 public abstract class Person {
 	
 	private int id;
@@ -11,6 +13,12 @@ public abstract class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
+    
+    public Person(PersonBuilder builder) {
+    	this.firstName = builder.getFirstName();
+    	this.lastName = builder.getLastName();
+    	this.phone = builder.getPhone();
+    }
 
 	public int getId() {
 		return id;
