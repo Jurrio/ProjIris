@@ -15,6 +15,7 @@ import com.jurimik.model.person.Client;
 import com.jurimik.model.person.Employee;
 import com.jurimik.model.person.Person;
 import com.jurimik.service.PersonService;
+import com.jurimik.util.Checker;
 import com.jurimik.util.Parser;
 
 import jdk.nashorn.internal.ir.RuntimeNode.Request;
@@ -31,13 +32,9 @@ public class ListPersonServlet extends HttpServlet {
 			boolean showEmployees = Parser.parseBoolean(RequestParams.EMPLOYEES);
 			
 			for (Person person : PersonService.getAll()) {
-				if (person instanceof Client && showClients) 
+				if (Checker.isPrint(person, showClients, showEmployees))
 					writer.println(person.toString());
-				if (person instanceof Employee && showEmployees) {
-					writer.println(person.toString());
-				}
 			}
-			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -45,4 +42,5 @@ public class ListPersonServlet extends HttpServlet {
 	
 	
 
+	
 }
