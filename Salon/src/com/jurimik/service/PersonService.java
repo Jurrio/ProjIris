@@ -9,7 +9,7 @@ public class PersonService {
 	public static boolean add(Person person){
 		return PersonRepository.add(person);
 	}
-	
+	@Deprecated
 	public static Person find(int id) {
 		return PersonRepository.getById(id);
 	}
