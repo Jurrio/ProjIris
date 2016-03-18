@@ -10,12 +10,12 @@ public class PersonRepository {
 	private static int id = 0;
 	
 	public static boolean add(Person person) {
-		if (personList.contains(person)) return false;
 		person.setId(nextId());
 		personList.add(person);
-		return true;
+		return personList.contains(person);
 	}
 	
+	@Deprecated
 	public static Person getById(int id) {
 		for (Person person : personList) {
 			if (id == person.getId()) return person;
