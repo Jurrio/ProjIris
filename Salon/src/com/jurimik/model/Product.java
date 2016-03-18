@@ -1,6 +1,8 @@
 package com.jurimik.model;
 
 public class Product {
+	
+	private int id;
     private String code;
     private String name;
     private int price;
@@ -44,5 +46,13 @@ public class Product {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 
 }
