@@ -14,6 +14,10 @@ public class PersonService {
 		return PersonRepository.getById(id);
 	}
 	
+	public static List<Person> find(String searchValue) {
+		return PersonRepository.find(searchValue);
+	}
+	
 	public static List<Person> getAll() {
 		return PersonRepository.getAll();
 	}
