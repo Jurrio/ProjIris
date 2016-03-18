@@ -1,4 +1,4 @@
-package com.jurimik.controller;
+package com.jurimik.controller.person;
 
 import java.io.IOException;
 import java.io.PrintWriter;
