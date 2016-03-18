@@ -23,6 +23,20 @@ public class PersonRepository {
 		return null;
 	}
 	
+	public static List<Person> find (String searchValue) {
+		List<Person> resultList = new ArrayList<>();
+		for (Person person : personList) {
+			String[] values = person.toString().split(" ");
+			for (String s : values) {
+				if (searchValue.equals(s)) {
+					resultList.add(person);
+					break;
+				}
+			}
+		}
+		return resultList;
+	}
+	
 	public static List<Person> getAll(){
 		return personList;
 	}
