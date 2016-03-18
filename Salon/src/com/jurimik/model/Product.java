@@ -55,4 +55,9 @@ public class Product {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return code + " " + name;
+	}
+	
 }
