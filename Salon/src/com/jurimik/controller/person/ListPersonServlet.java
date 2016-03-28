@@ -2,7 +2,6 @@ package com.jurimik.controller.person;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,17 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jurimik.constant.RequestParams;
-import com.jurimik.model.person.Client;
-import com.jurimik.model.person.Employee;
 import com.jurimik.model.person.Person;
 import com.jurimik.service.PersonService;
 import com.jurimik.util.Checker;
 import com.jurimik.util.Parser;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 @WebServlet(name = "ListPersonServlet", urlPatterns = "/listPerson")
 public class ListPersonServlet extends HttpServlet {
+
+	private static final long serialVersionUID = -3630001863098885288L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
