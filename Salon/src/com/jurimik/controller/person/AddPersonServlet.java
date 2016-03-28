@@ -14,10 +14,11 @@ import com.jurimik.constant.RequestParams;
 import com.jurimik.constant.ServletMessage;
 import com.jurimik.model.person.Person;
 import com.jurimik.service.PersonService;
-import com.jurimik.util.Parser;
 
 @WebServlet(name = "AddPersonServlet", urlPatterns = "/addPerson")
 public class AddPersonServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 6063976623337736622L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
