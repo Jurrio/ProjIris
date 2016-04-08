@@ -1,6 +1,7 @@
 package com.jurimik.model;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jurimik.model.person.Person;
 
@@ -9,6 +10,7 @@ public class Order {
 	private Person client;
 	private Person employee;
 	private double price;
+	private List<Product> products;
 	
 	public Order() {
 		
@@ -45,5 +47,13 @@ public class Order {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
 }
